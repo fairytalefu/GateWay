@@ -63,7 +63,7 @@ void Serial::Write_Data()
 }
 void Serial::readFromZigBeeSerialPort()
 {
-
+    
 }
 QString Serial::getCurrentDir()
 {

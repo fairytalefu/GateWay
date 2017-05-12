@@ -12,6 +12,8 @@ public:
     void initSerialPort();
     void Read_Data();
     void Write_Data();
+    QString runProcess(QString pyFileName);
+    QString getCurrentDir();
 public:
      QSerialPort availSerial;
      QSerialPort *serial;

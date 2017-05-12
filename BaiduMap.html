@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+body, html,#allmap {width: 100%;height: 100%;overflow: hidden;}
+</style>
+<script type="text/JavaScript" src="http://api.map.baidu.com/api?v=2.0&ak=NxtEqaXFSjTVbzfDCF91GYw7qTEeKEuq"></script>
+<title>定位</title>
+</head>
+<body>
+<div id="allmap"></div>
+
+</body>
+</html>
+<script type="text/javascript">
+
+var Lng;
+var Lat;
+// 百度地图API功能
+var map = new BMap.Map("allmap");
+var m_city = "福州市";
+map.centerAndZoom(m_city, 13);                              // 初始化地图,设置中心点坐标和地图级别
+map.addControl(new BMap.OverviewMapControl());              //添加缩略地图控件
+map.enableScrollWheelZoom();                               //启用滚轮放大缩小
+theLocation();
+// 用经纬度设置地图中心点
+function theLocation(Lng,Lat){
+	
+		var new_point = new BMap.Point(Lng,Lat);
+		var marker = new BMap.Marker(new_point);  // 创建标注
+		map.addOverlay(marker);              // 将标注添加到地图中
+		var label = new BMap.Label("光伏电站1");
+        marker.setLabel(label); //添加百度label
+		map.panTo(new_point);      
+}
+
+</script>

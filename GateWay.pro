@@ -6,6 +6,7 @@
 
 QT       += core gui
 QT       += sql serialport
+QT       += network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = GateWay
@@ -35,12 +36,24 @@ SOURCES += main.cpp\
     model.cpp \
     serial.cpp \
     video.cpp \
-    map.cpp
+    map.cpp \
+    postnetwork.cpp \
+    charts.cpp \
+    svm.cpp
 
 HEADERS  += gateway.h \
     model.h \
     serial.h \
     video.h \
-    map.h
+    map.h \
+    postnetwork.h \
+    charts.h \
+    svm.h
 
 FORMS    += gateway.ui
+
+DISTFILES += \
+    ZigBeeUART.py \
+    GPSUART.py \
+    saveToMySQL.py \
+    storeData.py

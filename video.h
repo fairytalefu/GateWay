@@ -13,11 +13,9 @@ public:
     QPixmap readFrame();
     QImage cvMat2QImage(const cv::Mat& mat);
 public:
-
     cv::Mat frame;
     QImage image;
     cv::VideoCapture capture;
-
 };
 
 #endif // VIDEO_H
